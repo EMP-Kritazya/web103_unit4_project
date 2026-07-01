@@ -1,0 +1,231 @@
+/* ---------- Page layout ---------- */
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* ---------- Builder ---------- */
+.car-builder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.car-builder-preview {
+    position: sticky;
+    top: 1rem;
+}
+
+.car-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    background: var(--card-background-color, #1b2733);
+}
+
+.car-price strong {
+    font-size: 1.6rem;
+}
+
+.feature-selector {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.25rem 0;
+}
+
+.feature-selector legend {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.feature-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.option-chip {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.15rem;
+    padding: 0.5rem 0.85rem;
+    border: 2px solid var(--muted-border-color, #37474f);
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    width: auto;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.option-chip small {
+    opacity: 0.7;
+    font-size: 0.75rem;
+}
+
+.option-chip.selected {
+    border-color: var(--primary, #1095c1);
+    background: var(--primary, #1095c1);
+    color: #fff;
+}
+
+.submit-button {
+    margin-top: 0.5rem;
+}
+
+/* ---------- Error / empty states ---------- */
+.error-message {
+    background: rgba(198, 40, 40, 0.12);
+    border: 1px solid #c62828;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+}
+
+.error-message p {
+    margin: 0.15rem 0;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+/* ---------- Car preview ---------- */
+.car-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.car-body {
+    position: relative;
+    width: 260px;
+    height: 90px;
+    border-radius: 45px 55px 18px 18px;
+    box-shadow: inset 0 -8px 14px rgba(0, 0, 0, 0.25);
+}
+
+.car-cabin {
+    position: absolute;
+    top: -34px;
+    left: 70px;
+    width: 110px;
+    height: 52px;
+    border-radius: 30px 30px 0 0;
+    border: 3px solid;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.car-wheel {
+    position: absolute;
+    bottom: -18px;
+    width: 44px;
+    height: 44px;
+    background: #111;
+    border: 6px solid #444;
+    border-radius: 50%;
+}
+
+.car-wheel-front { right: 28px; }
+.car-wheel-back { left: 28px; }
+
+.car-preview-caption {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.car-swatch {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ---------- Car grid / cards ---------- */
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.car-card {
+    padding: 1.5rem 1.25rem 1.25rem;
+    border-radius: 14px;
+    background: var(--card-background-color, #1b2733);
+}
+
+.car-card h3 {
+    margin: 1rem 0 0.25rem;
+}
+
+.car-card-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+}
+
+.car-card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem;
+    font-size: 0.85rem;
+}
+
+.car-card-features li { margin: 0.15rem 0; }
+.car-card-features span { opacity: 0.7; }
+
+.car-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.car-card-actions [role='button'],
+.car-card-actions button {
+    width: auto;
+    margin: 0;
+    padding: 0.4rem 0.9rem;
+}
+
+.danger {
+    background: #c62828;
+    border-color: #c62828;
+}
+
+/* ---------- Details ---------- */
+.car-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.car-details-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.breakdown { width: 100%; }
+.breakdown td { padding: 0.4rem 0; }
+.breakdown td:last-child { text-align: right; }
+
+@media (max-width: 800px) {
+    .car-builder,
+    .car-details {
+        grid-template-columns: 1fr;
+    }
+    .car-builder-preview { position: static; }
+}
